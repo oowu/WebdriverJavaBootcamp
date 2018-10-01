@@ -1,9 +1,7 @@
   @DataProvider(name = "data2")
     public Object[][] createData1() {
         return new Object[][]{
-                //new Object[] {"lietuv"},
-                //new Object[] {"eesti"}
-                {"zh-TW"},{"da"},
+                {"zh-TW"},{"da"},     //language by value 
                 {"pl"},{"gu"}
         };
     }
