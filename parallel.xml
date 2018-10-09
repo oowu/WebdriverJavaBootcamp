@@ -1,0 +1,22 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Parallel suit" parallel="tests" thread-count="2" verbose="1" >
+
+    <test name="Test1">
+        <classes>
+            <class name="YahooSearch.YahooSearchTest"/>
+        </classes>
+    </test>
+
+    <test name="Test2">
+        <classes>
+            <class name="day2.Class1">
+                <methods>
+                    <include name="testChangeLang"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+</suite>
