@@ -1,0 +1,22 @@
+<suite name="Suite1" verbose="1" >
+    <test name="Nopackage" >
+        <classes>
+            <class name="day2.Class1">
+                <methods>
+                    <include name="testLearnMore"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Regression1">
+        <classes>
+            <class name="day2.Class1">
+                <methods>
+                    <include name="testDropdown"/>
+                </methods>
+            </class>
+
+        </classes>
+    </test>
+</suite>
