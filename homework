@@ -1,0 +1,21 @@
+  @DataProvider(name = "data2")
+    public Object[][] createData1() {
+        return new Object[][]{
+                {"zh-TW"},{"da"},     //language by value 
+                {"pl"},{"gu"}
+        };
+    }
+
+    @Test(dataProvider = "data2")
+    //HOMEWORK
+    public void testChangeLang(String mylang) throws Exception {
+        driver.get("http://www.google.com");
+        driver.findElement(By.id("gb_70")).click();//Sign In Button
+        WebDriverWait wait = new WebDriverWait(driver,5);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='TquXA']")));
+        driver.findElement(By.xpath("//div[@class='TquXA']")).click();//dropdown
+        driver.findElement(By.xpath("//div[@class='OA0qNb ncFHed']/div[@data-value='"+mylang+"']")).click();
+
+        String result = driver.findElement(By.xpath("//div[@id='lang-chooser']//div[@data-value='"+mylang+"']/content")).getText();
+        System.out.println(result);
+    }
